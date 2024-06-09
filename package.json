@@ -1,0 +1,117 @@
+{
+  "name": "react-reactnative-component-generator",
+  "displayName": "React & React Native Component Generator",
+  "description": "Generate React and React Native components quickly",
+  "version": "1.0.0",
+  "publisher": "Shaaz Khan",
+  "engines": {
+    "vscode": "^1.50.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:extension.createReactFunctionalComponent",
+    "onCommand:extension.createReactClassComponent",
+    "onCommand:extension.createReactNativeFunctionalComponent",
+    "onCommand:extension.createReactNativeCardComponent",
+    "onCommand:extension.createReactNativeModalComponent",
+    "onCommand:extension.createReactNativeStackNavigation",
+    "onCommand:extension.createReactNativeTabNavigation",
+    "onCommand:extension.createApiCall",
+    "onCommand:extension.createValidators",
+    "onCommand:extension.createDateOperations",
+    "onCommand:extension.createFormValidation",
+    "onCommand:extension.createReduxActions",
+    "onCommand:extension.createReduxReducer",
+    "onCommand:extension.createAxiosService",
+    "onCommand:extension.createReactContext"
+  ],
+  "contributes": {
+    "commands": [
+      {
+        "command": "extension.createReactFunctionalComponent",
+        "title": "Create React Functional Component"
+      },
+      {
+        "command": "extension.createReactClassComponent",
+        "title": "Create React Class Component"
+      },
+      {
+        "command": "extension.createReactNativeFunctionalComponent",
+        "title": "Create React Native Functional Component"
+      },
+      {
+        "command": "extension.createReactNativeCardComponent",
+        "title": "Create React Native Card Component"
+      },
+      {
+        "command": "extension.createReactNativeModalComponent",
+        "title": "Create React Native Modal Component"
+      },
+      {
+        "command": "extension.createReactNativeStackNavigation",
+        "title": "Create React Native Stack Navigation"
+      },
+      {
+        "command": "extension.createReactNativeTabNavigation",
+        "title": "Create React Native Tab Navigation"
+      },
+      {
+        "command": "extension.createApiCall",
+        "title": "Create API Call"
+      },
+      {
+        "command": "extension.createValidators",
+        "title": "Create Validators"
+      },
+      {
+        "command": "extension.createDateOperations",
+        "title": "Create Date Operations"
+      },
+      {
+        "command": "extension.createFormValidation",
+        "title": "Create Form Validation"
+      },
+      {
+        "command": "extension.createReduxActions",
+        "title": "Create Redux Actions"
+      },
+      {
+        "command": "extension.createReduxReducer",
+        "title": "Create Redux Reducer"
+      },
+      {
+        "command": "extension.createAxiosService",
+        "title": "Create Axios Service"
+      },
+      {
+        "command": "extension.createReactContext",
+        "title": "Create React Context and Provider"
+      }
+    ]
+  },
+  "main": "./dist/extension.js",
+  "scripts": {
+    "vscode:prepublish": "webpack --mode production",
+    "compile": "webpack --mode development",
+    "watch": "webpack --watch",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext js",
+    "test": "node ./out/test/runTest.js"
+  },
+  "author": "Your Name <your.email@example.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shaaz1000/react-reactnative-component-generator"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.14.6",
+    "@babel/preset-env": "^7.14.7",
+    "babel-loader": "^8.2.2",
+    "copy-webpack-plugin": "^12.0.2",
+    "webpack": "^5.3.2",
+    "webpack-cli": "^4.1.0"
+  }
+}
