@@ -1,6 +1,7 @@
 const vscode = require("vscode");
 const path = require("path");
 const fs = require("fs");
+const { exec } = require("child_process");
 
 function createComponent(templatePath, componentName) {
   const template = fs.readFileSync(templatePath, "utf8");
@@ -29,6 +30,28 @@ function insertTemplate(templateName) {
     const position = editor.selection.active;
     editBuilder.insert(position, content);
   });
+}
+
+function generateApiDocumentation() {
+  const outputPath = path.join(vscode.workspace.rootPath, "docs");
+  const inputPath = vscode.workspace.rootPath;
+
+  exec(
+    `npx apidoc -i ${inputPath} -o ${outputPath}`,
+    (error, stdout, stderr) => {
+      if (error) {
+        vscode.window.showErrorMessage(`Error: ${error.message}`);
+        return;
+      }
+      if (stderr) {
+        vscode.window.showErrorMessage(`stderr: ${stderr}`);
+        return;
+      }
+      vscode.window.showInformationMessage(
+        "API documentation generated successfully!"
+      );
+    }
+  );
 }
 
 function activate(context) {
@@ -75,6 +98,76 @@ function activate(context) {
     { command: "extension.createReduxReducer", template: "reduxReducer.js" },
     { command: "extension.createAxiosService", template: "axiosService.js" },
     { command: "extension.createReactContext", template: "reactContext.js" },
+    { command: "extension.createExpressRoute", template: "expressRoute.js" },
+    {
+      command: "extension.createExpressMiddleware",
+      template: "expressMiddleware.js",
+    },
+    { command: "extension.createReactHOC", template: "reactHOC.js" },
+    { command: "extension.createReactHook", template: "reactHook.js" },
+    {
+      command: "extension.createReactNativeStylesheet",
+      template: "reactNativeStylesheet.js",
+    },
+    {
+      command: "extension.createReactLoginComponent",
+      template: "reactLogin.js",
+    },
+    {
+      command: "extension.createReactSignupComponent",
+      template: "reactSignup.js",
+    },
+    {
+      command: "extension.createReactNativeLoginComponent",
+      template: "reactNativeLogin.js",
+    },
+    {
+      command: "extension.createReactNativeSignupComponent",
+      template: "reactNativeSignup.js",
+    },
+    {
+      command: "extension.createExpressJwtMiddleware",
+      template: "expressJwtMiddleware.js",
+    },
+    { command: "extension.createReactAuthHOC", template: "reactAuthHOC.js" },
+    {
+      command: "extension.createApiDocumentation",
+      template: "apiDocumentation.js",
+    },
+    { command: "extension.createReactButton", template: "reactButton.js" },
+    { command: "extension.createReactCard", template: "reactCard.js" },
+    {
+      command: "extension.createReactNativeButton",
+      template: "reactNativeButton.js",
+    },
+    { command: "extension.createLogger", template: "logger.js" },
+    { command: "extension.createNestModule", template: "module.ts" },
+    { command: "extension.createNestController", template: "controller.ts" },
+    { command: "extension.createNestService", template: "service.ts" },
+    { command: "extension.createAuthModule", template: "auth.module.ts" },
+    { command: "extension.createAuthService", template: "auth.service.ts" },
+    {
+      command: "extension.createAuthController",
+      template: "auth.controller.ts",
+    },
+    { command: "extension.createJwtAuthGuard", template: "jwt-auth.guard.ts" },
+    { command: "extension.createJwtStrategy", template: "jwt.strategy.ts" },
+    {
+      command: "extension.createExpressWebSocketServer",
+      template: "express-websocket-server.js",
+    },
+    {
+      command: "extension.createNestWebSocketGateway",
+      template: "nest-websocket-gateway.ts",
+    },
+    {
+      command: "extension.createReactWebSocketClient",
+      template: "react-websocket-client.js",
+    },
+    {
+      command: "extension.createReactNativeWebSocketClient",
+      template: "react-native-websocket-client.js",
+    },
   ];
 
   commands.forEach(({ command, template }) => {
@@ -83,6 +176,13 @@ function activate(context) {
     );
     context.subscriptions.push(disposable);
   });
+
+  // Separate handling for generateApiDocumentation command
+  const disposableGenerateApiDocumentation = vscode.commands.registerCommand(
+    "extension.generateApiDocumentation",
+    generateApiDocumentation
+  );
+  context.subscriptions.push(disposableGenerateApiDocumentation);
 }
 
 function deactivate() {}

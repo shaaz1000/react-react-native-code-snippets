@@ -25,7 +25,39 @@
     "onCommand:extension.createReduxActions",
     "onCommand:extension.createReduxReducer",
     "onCommand:extension.createAxiosService",
-    "onCommand:extension.createReactContext"
+    "onCommand:extension.createReactContext",
+    "onCommand:extension.createExpressRoute",
+    "onCommand:extension.createExpressMiddleware",
+    "onCommand:extension.createReactHOC",
+    "onCommand:extension.createReactAuthHOC",
+    "onCommand:extension.createReactHook",
+    "onCommand:extension.createReactNativeStylesheet",
+    "onCommand:extension.createReactLoginComponent",
+    "onCommand:extension.createReactSignupComponent",
+    "onCommand:extension.createReactNativeLoginComponent",
+    "onCommand:extension.createReactNativeSignupComponent",
+    "onCommand:extension.createExpressJwtMiddleware",
+    "onCommand:extension.createApiDocumentation",
+    "onCommand:extension.createReactButton",
+    "onCommand:extension.createReactCard",
+    "onCommand:extension.createReactNativeButton",
+    "onCommand:extension.generateApiDocumentation",
+    "onCommand:extension.createLogger",
+    "onCommand:extension.createNestModule",
+    "onCommand:extension.createNestController",
+    "onCommand:extension.createNestService",
+    "onCommand:extension.createNestModule",
+    "onCommand:extension.createNestController",
+    "onCommand:extension.createNestService",
+    "onCommand:extension.createAuthModule",
+    "onCommand:extension.createAuthService",
+    "onCommand:extension.createAuthController",
+    "onCommand:extension.createJwtAuthGuard",
+    "onCommand:extension.createJwtStrategy",
+    "onCommand:extension.createExpressWebSocketServer",
+    "onCommand:extension.createNestWebSocketGateway",
+    "onCommand:extension.createReactWebSocketClient",
+    "onCommand:extension.createReactNativeWebSocketClient"
   ],
   "contributes": {
     "commands": [
@@ -88,6 +120,134 @@
       {
         "command": "extension.createReactContext",
         "title": "Create React Context and Provider"
+      },
+      {
+        "command": "extension.createExpressRoute",
+        "title": "Create Express Route"
+      },
+      {
+        "command": "extension.createExpressMiddleware",
+        "title": "Create Express Middleware"
+      },
+      {
+        "command": "extension.createReactHOC",
+        "title": "Create React HOC"
+      },
+      {
+        "command": "extension.createReactHook",
+        "title": "Create React Hook"
+      },
+      {
+        "command": "extension.createReactNativeStylesheet",
+        "title": "Create React Native Stylesheet"
+      },
+      {
+        "command": "extension.createReactLoginComponent",
+        "title": "Create React Login Component"
+      },
+      {
+        "command": "extension.createReactSignupComponent",
+        "title": "Create React Signup Component"
+      },
+      {
+        "command": "extension.createReactNativeLoginComponent",
+        "title": "Create React Native Login Component"
+      },
+      {
+        "command": "extension.createReactNativeSignupComponent",
+        "title": "Create React Native Signup Component"
+      },
+      {
+        "command": "extension.createExpressJwtMiddleware",
+        "title": "Create Express JWT Middleware"
+      },
+      {
+        "command": "extension.createApiDocumentation",
+        "title": "Create API Documentation"
+      },
+      {
+        "command": "extension.createReactButton",
+        "title": "Create React Button Component"
+      },
+      {
+        "command": "extension.createReactCard",
+        "title": "Create React Card Component"
+      },
+      {
+        "command": "extension.createReactNativeButton",
+        "title": "Create React Native Button Component"
+      },
+      {
+        "command": "extension.generateApiDocumentation",
+        "title": "Generate API Documentation"
+      },
+      {
+        "command": "extension.createReactAuthHOC",
+        "title": "Create React Auth Hoc"
+      },
+      {
+        "command": "extension.createLogger",
+        "title": "Create Logger Module"
+      },
+      {
+        "command": "extension.createNestModule",
+        "title": "Create NestJS Module"
+      },
+      {
+        "command": "extension.createNestController",
+        "title": "Create NestJS Controller"
+      },
+      {
+        "command": "extension.createNestService",
+        "title": "Create NestJS Service"
+      },
+      {
+        "command": "extension.createNestModule",
+        "title": "Create NestJS Module"
+      },
+      {
+        "command": "extension.createNestController",
+        "title": "Create NestJS Controller"
+      },
+      {
+        "command": "extension.createNestService",
+        "title": "Create NestJS Service"
+      },
+      {
+        "command": "extension.createAuthModule",
+        "title": "Create Auth Module"
+      },
+      {
+        "command": "extension.createAuthService",
+        "title": "Create Auth Service"
+      },
+      {
+        "command": "extension.createAuthController",
+        "title": "Create Auth Controller"
+      },
+      {
+        "command": "extension.createJwtAuthGuard",
+        "title": "Create JWT Auth Guard"
+      },
+      {
+        "command": "extension.createJwtStrategy",
+        "title": "Create JWT Strategy"
+      },
+      {
+        "command": "extension.createExpressWebSocketServer",
+        "title": "Create Express WebSocket Server"
+      },
+      {
+        "command": "extension.createNestWebSocketGateway",
+        "title": "Create NestJS WebSocket Gateway"
+      },
+      {
+        "command": "extension.createReactWebSocketClient",
+        "title": "Create React WebSocket Client"
+      },
+      {
+        "command": "extension.createReactNativeWebSocketClient",
+        "title": "Create React Native WebSocket Client"
       }
     ]
   },
@@ -109,9 +269,14 @@
   "devDependencies": {
     "@babel/core": "^7.14.6",
     "@babel/preset-env": "^7.14.7",
+    "apidoc": "^1.2.0",
     "babel-loader": "^8.2.2",
     "copy-webpack-plugin": "^12.0.2",
     "webpack": "^5.3.2",
     "webpack-cli": "^4.1.0"
+  },
+  "dependencies": {
+    "winston": "^3.13.0",
+    "winston-loggly-bulk": "^3.3.0"
   }
 }

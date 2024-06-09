@@ -12,12 +12,22 @@ This VS Code extension helps you generate React and React Native components quic
 - Integrate React Native stack navigation.
 - Integrate React Native tab navigation.
 - Add basic React Native animations.
-- Perform API calls with all methods using axios.
+- Perform API calls with all methods using Axios.
 - Form validation utilities.
 - Date operations utilities.
 - Redux actions and reducers.
 - Axios API service.
 - React context and provider.
+- Express.js route handler.
+- Express.js middleware.
+- React Higher-Order Component (HOC).
+- Custom React hook.
+- React Native StyleSheet.
+- React and React Native login and signup components.
+- Express.js JWT authentication middleware.
+- Real-time notifications using WebSockets for Express and NestJS backends, and React/React Native frontends.
+- API documentation generation.
+- Comprehensive logging module.
 
 ## Installation
 
@@ -471,6 +481,108 @@ This VS Code extension helps you generate React and React Native components quic
     const useMyComponentContext = () => useContext(MyComponentContext);
 
     export { MyComponentProvider, useMyComponentContext };
+    ```
+### Express.js Components
+
+- **Express Route**:
+  - **Command**: `Create Express Route`
+  - **Generated Code**:
+    ```js
+    const express = require('express');
+    const router = express.Router();
+
+    // GET endpoint
+    router.get('/', (req, res) => {
+      res.send('GET request to the homepage');
+    });
+
+    // POST endpoint
+    router.post('/', (req, res) => {
+      res.send('POST request to the homepage');
+    });
+
+    // PUT endpoint
+    router.put('/:id', (req, res) => {
+      res.send(`PUT request to update item with id ${req.params.id}`);
+    });
+
+    // DELETE endpoint
+    router.delete('/:id', (req, res) => {
+      res.send(`DELETE request to delete item with id ${req.params.id}`);
+    });
+
+    module.exports = router;
+    ```
+
+- **Express Middleware**:
+  - **Command**: `Create Express Middleware`
+  - **Generated Code**:
+    ```js
+    const myMiddleware = (req, res, next) => {
+      console.log('Middleware is working');
+      next();
+    };
+
+    module.exports = myMiddleware;
+    ```
+
+### Advanced React Components
+
+- **React Higher-Order Component (HOC)**:
+  - **Command**: `Create React HOC`
+  - **Generated Code**:
+    ```js
+    import React from 'react';
+
+    const withMyComponent = (WrappedComponent) => {
+      return class extends React.Component {
+        render() {
+          return <WrappedComponent {...this.props} />;
+        }
+      };
+    };
+
+    export default withMyComponent;
+    ```
+
+- **Custom React Hook**:
+  - **Command**: `Create React Hook`
+  - **Generated Code**:
+    ```js
+    import { useState, useEffect } from 'react';
+
+    const useMyComponent = () => {
+      const [state, setState] = useState(null);
+
+      useEffect(() => {
+        // Perform some action
+      }, []);
+
+      return [state, setState];
+    };
+
+    export default useMyComponent;
+    ```
+
+- **React Native StyleSheet**:
+  - **Command**: `Create React Native StyleSheet`
+  - **Generated Code**:
+    ```js
+    import { StyleSheet } from 'react-native';
+
+    const styles = StyleSheet.create({
+      container: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+      },
+      text: {
+        fontSize: 18,
+        color: '#000',
+      },
+    });
+
+    export default styles;
     ```
 
 ## Contributing
