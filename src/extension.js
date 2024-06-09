@@ -168,6 +168,30 @@ function activate(context) {
       command: "extension.createReactNativeWebSocketClient",
       template: "react-native-websocket-client.js",
     },
+    {
+      command: "extension.createDebounce",
+      template: "debounce.js",
+    },
+    {
+      command: "extension.createThrottle",
+      template: "throttle.js",
+    },
+    {
+      command: "extension.createLocalStorageUtil",
+      template: "localStorageUtil.js",
+    },
+    {
+      command: "extension.createCache",
+      template: "caching.js",
+    },
+    {
+      command: "extension.createEncrypt",
+      template: "encryption.js",
+    },
+    {
+      command: "extension.createDecrypt",
+      template: "encryption.js",
+    },
   ];
 
   commands.forEach(({ command, template }) => {

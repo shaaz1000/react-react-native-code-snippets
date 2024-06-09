@@ -57,7 +57,13 @@
     "onCommand:extension.createExpressWebSocketServer",
     "onCommand:extension.createNestWebSocketGateway",
     "onCommand:extension.createReactWebSocketClient",
-    "onCommand:extension.createReactNativeWebSocketClient"
+    "onCommand:extension.createReactNativeWebSocketClient",
+    "onCommand:extension.createDebounce",
+    "onCommand:extension.createThrottle",
+    "onCommand:extension.createLocalStorageUtil",
+    "onCommand:extension.createCache",
+    "onCommand:extension.createEncrypt",
+    "onCommand:extension.createDecrypt"
   ],
   "contributes": {
     "commands": [
@@ -248,6 +254,30 @@
       {
         "command": "extension.createReactNativeWebSocketClient",
         "title": "Create React Native WebSocket Client"
+      },
+      {
+        "command": "extension.createDebounce",
+        "title": "Create Debounce"
+      },
+      {
+        "command": "extension.createThrottle",
+        "title": "Create Throttle"
+      },
+      {
+        "command": "extension.createLocalStorageUtil",
+        "title": "Create Local Storage Util"
+      },
+      {
+        "command": "extension.createCache",
+        "title": "Create Cache"
+      },
+      {
+        "command": "extension.createEncrypt",
+        "title": "Create Encrypt"
+      },
+      {
+        "command": "extension.createDecrypt",
+        "title": "Create Decrypt"
       }
     ]
   },
