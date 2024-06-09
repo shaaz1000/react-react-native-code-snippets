@@ -323,7 +323,7 @@ This VS Code extension helps you generate React and React Native components quic
     };
 
     const validateMinLength = (value, minLength) => {
-      return value.length >= minLength;
+      return value.length >= minLength.
     };
 
     export { validateRequired, validateEmail, validatePassword, validatePhoneNumber, validateMinLength };
@@ -351,7 +351,7 @@ This VS Code extension helps you generate React and React Native components quic
     const subtractDays = (date, days) => {
       const result = new Date(date);
       result.setDate(result.getDate() - days);
-      return result;
+      return result.
     };
 
     const differenceInDays = (date1, date2) => {
@@ -412,7 +412,7 @@ This VS Code extension helps you generate React and React Native components quic
       }
     };
 
-    export default MyComponentReducer;
+    export default MyComponentReducer.
     ```
 
 - **Axios Service**:
@@ -440,9 +440,9 @@ This VS Code extension helps you generate React and React Native components quic
     export const createMyComponent = async (data) => {
       try {
         const response = await apiClient.post('/mycomponent', data);
-        return response.data;
+        return response.data.
       } catch (error) {
-        throw error;
+        throw error.
       }
     };
 
@@ -451,7 +451,7 @@ This VS Code extension helps you generate React and React Native components quic
         const response = await apiClient.put(`/mycomponent/${id}`, data);
         return response.data;
       } catch (error) {
-        throw error;
+        throw error.
       }
     };
 
@@ -459,7 +459,7 @@ This VS Code extension helps you generate React and React Native components quic
       try {
         await apiClient.delete(`/mycomponent/${id}`);
       } catch (error) {
-        throw error;
+        throw error.
       }
     };
     ```
@@ -482,6 +482,7 @@ This VS Code extension helps you generate React and React Native components quic
 
     export { MyComponentProvider, useMyComponentContext };
     ```
+
 ### Express.js Components
 
 - **Express Route**:
@@ -583,6 +584,240 @@ This VS Code extension helps you generate React and React Native components quic
     });
 
     export default styles;
+    ```
+
+### Authentication Components
+
+- **React Login Component**:
+  - **Command**: `Create React Login Component`
+  - **Generated Code**:
+    ```jsx
+    import React, { useState } from 'react';
+
+    const LoginComponent = () => {
+      const [email, setEmail] = useState('');
+      const [password, setPassword] = useState('');
+
+      const handleLogin = () => {
+        // Add login logic here
+      };
+
+      return (
+        <div>
+          <input
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            placeholder="Email"
+          />
+          <input
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            placeholder="Password"
+          />
+          <button onClick={handleLogin}>Login</button>
+        </div>
+      );
+    };
+
+    export default LoginComponent;
+    ```
+
+- **React Native Login Component**:
+  - **Command**: `Create React Native Login Component`
+  - **Generated Code**:
+    ```jsx
+    import React, { useState } from 'react';
+    import { View, Text, TextInput, Button, StyleSheet } from 'react-native';
+
+    const LoginComponent = () => {
+      const [email, setEmail] = useState('');
+      const [password, setPassword] = useState('');
+
+      const handleLogin = () => {
+        // Add login logic here
+      };
+
+      return (
+        <View style={styles.container}>
+          <TextInput
+            style={styles.input}
+            placeholder="Email"
+            value={email}
+            onChangeText={setEmail}
+          />
+          <TextInput
+            style={styles.input}
+            placeholder="Password"
+            value={password}
+            onChangeText={setPassword}
+            secureTextEntry
+          />
+          <Button title="Login" onPress={handleLogin} />
+        </View>
+      );
+    };
+
+    const styles = StyleSheet.create({
+      container: {
+        padding: 20,
+      },
+      input: {
+        height: 40,
+        borderColor: 'gray',
+        borderWidth: 1,
+        marginBottom: 12,
+        paddingLeft: 10,
+      },
+    });
+
+    export default LoginComponent;
+    ```
+
+- **Express JWT Middleware**:
+  - **Command**: `Create Express JWT Middleware`
+  - **Generated Code**:
+    ```js
+    const jwt = require('jsonwebtoken');
+
+    const jwtMiddleware = (req, res, next) => {
+      const token = req.header('Authorization').replace('Bearer ', '');
+
+      if (!token) {
+        return res.status(401).send({ error: 'Access denied, no token provided.' });
+      }
+
+      try {
+        const decoded = jwt.verify(token, process.env.JWT_SECRET);
+        req.user = decoded;
+        next();
+      } catch (ex) {
+        res.status(400).send({ error: 'Invalid token.' });
+      }
+    };
+
+    module.exports = jwtMiddleware;
+    ```
+
+### Real-Time Notifications
+
+- **Express WebSocket Server**:
+  - **Command**: `Create Express WebSocket Server`
+  - **Generated Code**:
+    ```js
+    const WebSocket = require('ws');
+
+    const wss = new WebSocket.Server({ port: 8080 });
+
+    wss.on('connection', (ws) => {
+      ws.on('message', (message) => {
+        console.log('received:', message);
+      });
+
+      ws.send('Hello! Message From Server!!');
+    });
+
+    module.exports = wss;
+    ```
+
+- **React WebSocket Client**:
+  - **Command**: `Create React WebSocket Client`
+  - **Generated Code**:
+    ```jsx
+    import React, { useEffect } from 'react';
+
+    const WebSocketComponent = () => {
+      useEffect(() => {
+        const ws = new WebSocket('ws://localhost:8080');
+
+        ws.onopen = () => {
+          ws.send('Hello! Message From Client!!');
+        };
+
+        ws.onmessage = (event) => {
+          console.log('Message from server', event.data);
+        };
+
+        return () => {
+          ws.close();
+        };
+      }, []);
+
+      return <div>WebSocket Client</div>;
+    };
+
+    export default WebSocketComponent;
+    ```
+
+- **React Native WebSocket Client**:
+  - **Command**: `Create React Native WebSocket Client`
+  - **Generated Code**:
+    ```jsx
+    import React, { useEffect } from 'react';
+    import { View, Text } from 'react-native';
+
+    const WebSocketComponent = () => {
+      useEffect(() => {
+        const ws = new WebSocket('ws://localhost:8080');
+
+        ws.onopen = () => {
+          ws.send('Hello! Message From Client!!');
+        };
+
+        ws.onmessage = (event) => {
+          console.log('Message from server', event.data);
+        };
+
+        return () => {
+          ws.close();
+        };
+      }, []);
+
+      return (
+        <View>
+          <Text>WebSocket Client</Text>
+        </View>
+      );
+    };
+
+    export default WebSocketComponent;
+    ```
+
+### API Documentation
+
+- **Generate API Documentation**:
+  - **Command**: `Generate API Documentation`
+  - **Generated Code**:
+    ```sh
+    npx swagger-jsdoc -d swaggerDef.js -o ./swagger.json
+    ```
+
+### Logging
+
+- **Create Logger Module**:
+  - **Command**: `Create Logger Module`
+  - **Generated Code**:
+    ```js
+    const winston = require('winston');
+
+    const logger = winston.createLogger({
+      level: 'info',
+      format: winston.format.json(),
+      defaultMeta: { service: 'user-service' },
+      transports: [
+        new winston.transports.File({ filename: 'error.log', level: 'error' }),
+        new winston.transports.File({ filename: 'combined.log' }),
+      ],
+    });
+
+    if (process.env.NODE_ENV !== 'production') {
+      logger.add(new winston.transports.Console({
+        format: winston.format.simple(),
+      }));
+    }
+
+    module.exports = logger;
     ```
 
 ## Contributing
