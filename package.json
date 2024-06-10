@@ -73,7 +73,10 @@
     "onCommand:extension.detectMemoryLeaks",
     "onCommand:extension.visualizeDependencies",
     "onCommand:extension.diagnoseIssues",
-    "onCommand:extension.integrateWithExternalTools"
+    "onCommand:extension.integrateWithExternalTools",
+    "onCommand:extension.createReactBrowserRouter",
+    "onCommand:extension.createErrorBoundary",
+    "onCommand:extension.createReactNavbar"
   ],
   "contributes": {
     "commands": [
@@ -328,6 +331,18 @@
       {
         "command": "extension.integrateWithExternalTools",
         "title": "Integrate with External Tools"
+      },
+      {
+        "command": "extension.createReactBrowserRouter",
+        "title": "Create React Browser Router"
+      },
+      {
+        "command": "extension.createErrorBoundary",
+        "title": "Create React Error Boundary"
+      },
+      {
+        "command": "extension.createReactNavbar",
+        "title": "Create React Navbar"
       }
     ]
   },

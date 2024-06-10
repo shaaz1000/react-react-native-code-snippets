@@ -220,6 +220,12 @@ function activate(context) {
       command: "extension.integrateWithExternalTools",
       template: "externalToolIntegrator.js",
     },
+    {
+      command: "extension.createReactBrowserRouter",
+      template: "reactBrowserRouter.js",
+    },
+    { command: "extension.createErrorBoundary", template: "errorBoundary.js" },
+    { command: "extension.createReactNavbar", template: "reactNavbar.js" },
   ];
 
   commands.forEach(({ command, template }) => {
