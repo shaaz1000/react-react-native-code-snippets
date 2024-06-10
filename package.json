@@ -63,7 +63,17 @@
     "onCommand:extension.createLocalStorageUtil",
     "onCommand:extension.createCache",
     "onCommand:extension.createEncrypt",
-    "onCommand:extension.createDecrypt"
+    "onCommand:extension.createDecrypt",
+    "onCommand:extension.reportError",
+    "onCommand:extension.showStackTrace",
+    "onCommand:extension.visualizeCodePath",
+    "onCommand:extension.profilePerformance",
+    "onCommand:extension.manageLogs",
+    "onCommand:extension.addBreakpoint",
+    "onCommand:extension.detectMemoryLeaks",
+    "onCommand:extension.visualizeDependencies",
+    "onCommand:extension.diagnoseIssues",
+    "onCommand:extension.integrateWithExternalTools"
   ],
   "contributes": {
     "commands": [
@@ -278,6 +288,46 @@
       {
         "command": "extension.createDecrypt",
         "title": "Create Decrypt"
+      },
+      {
+        "command": "extension.reportError",
+        "title": "Report Error"
+      },
+      {
+        "command": "extension.showStackTrace",
+        "title": "Show Stack Trace"
+      },
+      {
+        "command": "extension.visualizeCodePath",
+        "title": "Visualize Code Path"
+      },
+      {
+        "command": "extension.profilePerformance",
+        "title": "Profile Performance"
+      },
+      {
+        "command": "extension.manageLogs",
+        "title": "Manage Logs"
+      },
+      {
+        "command": "extension.addBreakpoint",
+        "title": "Add Breakpoint"
+      },
+      {
+        "command": "extension.detectMemoryLeaks",
+        "title": "Detect Memory Leaks"
+      },
+      {
+        "command": "extension.visualizeDependencies",
+        "title": "Visualize Dependencies"
+      },
+      {
+        "command": "extension.diagnoseIssues",
+        "title": "Diagnose Issues"
+      },
+      {
+        "command": "extension.integrateWithExternalTools",
+        "title": "Integrate with External Tools"
       }
     ]
   },

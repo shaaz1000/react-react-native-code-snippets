@@ -3,6 +3,19 @@ const path = require("path");
 const fs = require("fs");
 const { exec } = require("child_process");
 
+const { errorReporter } = require("./templates/errorReporter");
+const { interactiveStackTrace } = require("./templates/interactiveStackTrace");
+const { visualizeCodePath } = require("./templates/codePathVisualizer");
+const { profilePerformance } = require("./templates/performanceProfiler");
+const { logManager } = require("./templates/logManager");
+const { addBreakpoint } = require("./templates/breakpointManager");
+const { detectMemoryLeaks } = require("./templates/memoryLeakDetector");
+const { visualizeDependencies } = require("./templates/dependencyVisualizer");
+const { diagnoseIssues } = require("./templates/issueDiagnoser");
+const {
+  integrateWithExternalTools,
+} = require("./templates/externalToolIntegrator");
+
 function createComponent(templatePath, componentName) {
   const template = fs.readFileSync(templatePath, "utf8");
   return template.replace(/\$\{componentName\}/g, componentName);
@@ -56,6 +69,7 @@ function generateApiDocumentation() {
 
 function activate(context) {
   const commands = [
+    // Existing commands
     {
       command: "extension.createReactFunctionalComponent",
       template: "reactFunctionalComponent.js",
@@ -168,29 +182,43 @@ function activate(context) {
       command: "extension.createReactNativeWebSocketClient",
       template: "react-native-websocket-client.js",
     },
-    {
-      command: "extension.createDebounce",
-      template: "debounce.js",
-    },
-    {
-      command: "extension.createThrottle",
-      template: "throttle.js",
-    },
+    { command: "extension.createDebounce", template: "debounce.js" },
+    { command: "extension.createThrottle", template: "throttle.js" },
     {
       command: "extension.createLocalStorageUtil",
       template: "localStorageUtil.js",
     },
+    { command: "extension.createCache", template: "caching.js" },
+    { command: "extension.createEncrypt", template: "encryption.js" },
+    { command: "extension.createDecrypt", template: "encryption.js" },
+    // New debugging commands
+    { command: "extension.reportError", template: "errorReporter.js" },
     {
-      command: "extension.createCache",
-      template: "caching.js",
+      command: "extension.showStackTrace",
+      template: "interactiveStackTrace.js",
     },
     {
-      command: "extension.createEncrypt",
-      template: "encryption.js",
+      command: "extension.visualizeCodePath",
+      template: "codePathVisualizer.js",
     },
     {
-      command: "extension.createDecrypt",
-      template: "encryption.js",
+      command: "extension.profilePerformance",
+      template: "performanceProfiler.js",
+    },
+    { command: "extension.manageLogs", template: "logManager.js" },
+    { command: "extension.addBreakpoint", template: "breakpointManager.js" },
+    {
+      command: "extension.detectMemoryLeaks",
+      template: "memoryLeakDetector.js",
+    },
+    {
+      command: "extension.visualizeDependencies",
+      template: "dependencyVisualizer.js",
+    },
+    { command: "extension.diagnoseIssues", template: "issueDiagnoser.js" },
+    {
+      command: "extension.integrateWithExternalTools",
+      template: "externalToolIntegrator.js",
     },
   ];
 
@@ -201,7 +229,6 @@ function activate(context) {
     context.subscriptions.push(disposable);
   });
 
-  // Separate handling for generateApiDocumentation command
   const disposableGenerateApiDocumentation = vscode.commands.registerCommand(
     "extension.generateApiDocumentation",
     generateApiDocumentation
