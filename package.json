@@ -76,7 +76,16 @@
     "onCommand:extension.integrateWithExternalTools",
     "onCommand:extension.createReactBrowserRouter",
     "onCommand:extension.createErrorBoundary",
-    "onCommand:extension.createReactNavbar"
+    "onCommand:extension.createReactNavbar",
+    "onCommand:extension.createReactSimpleCaptcha",
+    "onCommand:extension.createReactSpinners",
+    "onCommand:extension.createReactCarousel",
+    "onCommand:extension.createReactNativeCarousel",
+    "onCommand:extension.createReactLazyLoading",
+    "onCommand:extension.createReactInfiniteLoading",
+    "onCommand:extension.createI18n",
+    "onCommand:extension.createReactTable",
+    "onCommand:extension.createReactTabs"
   ],
   "contributes": {
     "commands": [
@@ -343,6 +352,42 @@
       {
         "command": "extension.createReactNavbar",
         "title": "Create React Navbar"
+      },
+      {
+        "command": "extension.createReactSimpleCaptcha",
+        "title": "Create React Simple Captcha"
+      },
+      {
+        "command": "extension.createReactSpinners",
+        "title": "Create React Spinners"
+      },
+      {
+        "command": "extension.createReactCarousel",
+        "title": "Create React Carousel"
+      },
+      {
+        "command": "extension.createReactNativeCarousel",
+        "title": "Create React Native Carousel"
+      },
+      {
+        "command": "extension.createReactLazyLoading",
+        "title": "Create React Lazy Loading"
+      },
+      {
+        "command": "extension.createReactInfiniteLoading",
+        "title": "Create React Infinite Loading"
+      },
+      {
+        "command": "extension.createI18n",
+        "title": "Create i18n"
+      },
+      {
+        "command": "extension.createReactTable",
+        "title": "Create React Table"
+      },
+      {
+        "command": "extension.createReactTabs",
+        "title": "Create React Tabs"
       }
     ]
   },

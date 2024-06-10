@@ -226,6 +226,27 @@ function activate(context) {
     },
     { command: "extension.createErrorBoundary", template: "errorBoundary.js" },
     { command: "extension.createReactNavbar", template: "reactNavbar.js" },
+    {
+      command: "extension.createReactSimpleCaptcha",
+      template: "reactSimpleCaptcha.js",
+    },
+    { command: "extension.createReactSpinners", template: "reactSpinners.js" },
+    { command: "extension.createReactCarousel", template: "reactCarousel.js" },
+    {
+      command: "extension.createReactNativeCarousel",
+      template: "reactNativeCarousel.js",
+    },
+    {
+      command: "extension.createReactLazyLoading",
+      template: "reactLazyLoading.js",
+    },
+    {
+      command: "extension.createReactInfiniteLoading",
+      template: "reactInfiniteLoading.js",
+    },
+    { command: "extension.createI18n", template: "i18n.js" },
+    { command: "extension.createReactTable", template: "reactTable.js" },
+    { command: "extension.createReactTabs", template: "reactTabs.js" },
   ];
 
   commands.forEach(({ command, template }) => {
