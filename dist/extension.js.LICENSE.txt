@@ -1,3 +1,23 @@
+/*! ./templates/breakpointManager */
+
+/*! ./templates/codePathVisualizer */
+
+/*! ./templates/dependencyVisualizer */
+
+/*! ./templates/errorReporter */
+
+/*! ./templates/externalToolIntegrator */
+
+/*! ./templates/interactiveStackTrace */
+
+/*! ./templates/issueDiagnoser */
+
+/*! ./templates/logManager */
+
+/*! ./templates/memoryLeakDetector */
+
+/*! ./templates/performanceProfiler */
+
 /*! child_process */
 
 /*! fs */
@@ -25,3 +45,43 @@
 /*!********************************!*\
   !*** external "child_process" ***!
   \********************************/
+
+/*!*************************************!*\
+  !*** ./src/templates/logManager.js ***!
+  \*************************************/
+
+/*!****************************************!*\
+  !*** ./src/templates/errorReporter.js ***!
+  \****************************************/
+
+/*!*****************************************!*\
+  !*** ./src/templates/issueDiagnoser.js ***!
+  \*****************************************/
+
+/*!********************************************!*\
+  !*** ./src/templates/breakpointManager.js ***!
+  \********************************************/
+
+/*!*********************************************!*\
+  !*** ./src/templates/codePathVisualizer.js ***!
+  \*********************************************/
+
+/*!*********************************************!*\
+  !*** ./src/templates/memoryLeakDetector.js ***!
+  \*********************************************/
+
+/*!**********************************************!*\
+  !*** ./src/templates/performanceProfiler.js ***!
+  \**********************************************/
+
+/*!***********************************************!*\
+  !*** ./src/templates/dependencyVisualizer.js ***!
+  \***********************************************/
+
+/*!************************************************!*\
+  !*** ./src/templates/interactiveStackTrace.js ***!
+  \************************************************/
+
+/*!*************************************************!*\
+  !*** ./src/templates/externalToolIntegrator.js ***!
+  \*************************************************/
