@@ -3,7 +3,7 @@
   "displayName": "React & React Native Component Generator",
   "description": "Generate React and React Native components quickly",
   "version": "1.0.0",
-  "publisher": "Shaaz Khan",
+  "publisher": "ReactReactJsExpressJsCodeSnippets",
   "engines": {
     "vscode": "^1.50.0"
   },
