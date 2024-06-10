@@ -247,6 +247,76 @@ function activate(context) {
     { command: "extension.createI18n", template: "i18n.js" },
     { command: "extension.createReactTable", template: "reactTable.js" },
     { command: "extension.createReactTabs", template: "reactTabs.js" },
+    {
+      command: "extension.createReactNativeSvgXmlImage",
+      template: "reactNativeSvgXmlImage.js",
+    },
+    { command: "extension.createHandleEmail", template: "handleEmail.js" },
+    {
+      command: "extension.createHandleMobilePhoneNumber",
+      template: "handleMobilePhoneNumber.js",
+    },
+    {
+      command: "extension.createHandleWebsiteLink",
+      template: "handleWebsiteLink.js",
+    },
+    {
+      command: "extension.createCheckInternetAccess",
+      template: "checkInternetAccess.js",
+    },
+    {
+      command: "extension.createHandleImagePicker",
+      template: "handleImagePicker.js",
+    },
+    {
+      command: "extension.createImagePickerBoilerplate",
+      template: "imagePickerBoilerplate.js",
+    },
+    {
+      command: "extension.createHandleVideoPicker",
+      template: "handleVideoPicker.js",
+    },
+    {
+      command: "extension.createVideoPickerBoilerplate",
+      template: "videoPickerBoilerplate.js",
+    },
+    { command: "extension.createHandleCamera", template: "handleCamera.js" },
+    {
+      command: "extension.createCameraBoilerplate",
+      template: "cameraBoilerplate.js",
+    },
+    {
+      command: "extension.createHandleLocation",
+      template: "handleLocation.js",
+    },
+    {
+      command: "extension.createLocationBoilerplate",
+      template: "locationBoilerplate.js",
+    },
+    {
+      command: "extension.createHandleFirebaseAnalytics",
+      template: "handleFirebaseAnalytics.js",
+    },
+    {
+      command: "extension.createFirebaseAnalyticsBoilerplate",
+      template: "firebaseAnalyticsBoilerplate.js",
+    },
+    {
+      command: "extension.createReactContextApiBoilerplate",
+      template: "reactContextApiBoilerplate.js",
+    },
+    {
+      command: "extension.createReactNativeMaps",
+      template: "reactNativeMaps.js",
+    },
+    {
+      command: "extension.createReactNativeAnimations",
+      template: "reactNativeAnimations.js",
+    },
+    {
+      command: "extension.createReactNativeThemeSwitching",
+      template: "reactNativeThemeSwitching.js",
+    },
   ];
 
   commands.forEach(({ command, template }) => {

@@ -819,6 +819,520 @@ This VS Code extension helps you generate React and React Native components quic
 
     module.exports = logger;
     ```
+### React Components
+
+- **React Auth Higher-Order Component (HOC)**:
+  - **Command**: `Create React Auth HOC`
+  - **Generated Code**:
+    ```js
+    import React from 'react';
+    import { Redirect } from 'react-router-dom';
+
+    const withAuth = (WrappedComponent) => {
+      return class extends React.Component {
+        render() {
+          const isAuthenticated = // logic to check if user is authenticated;
+          return isAuthenticated ? (
+            <WrappedComponent {...this.props} />
+          ) : (
+            <Redirect to="/login" />
+          );
+        }
+      };
+    };
+
+    export default withAuth;
+    ```
+### Real-Time Notifications
+
+- **NestJS WebSocket Gateway**:
+  - **Command**: `Create NestJS WebSocket Gateway`
+  - **Generated Code**:
+    ```typescript
+    import { SubscribeMessage, WebSocketGateway, OnGatewayInit, WebSocketServer } from '@nestjs/websockets';
+    import { Server } from 'socket.io';
+
+    @WebSocketGateway()
+    export class MyGateway implements OnGatewayInit {
+      @WebSocketServer() server: Server;
+
+      afterInit(server: Server) {
+        console.log('WebSocket server initialized');
+      }
+
+      @SubscribeMessage('message')
+      handleMessage(client: any, payload: any): string {
+        return 'Hello world!';
+      }
+    }
+    ```
+### Theming
+
+- **React Native Theme Switching**:
+  - **Command**: `Create React Native Theme Switching`
+  - **Generated Code**:
+    ```jsx
+    import React, { createContext, useState, useContext } from 'react';
+    import { View, Button, Text, StyleSheet } from 'react-native';
+
+    const ThemeContext = createContext();
+
+    const themes = {
+      light: {
+        background: 'white',
+        color: 'black',
+      },
+      dark: {
+        background: 'black',
+        color: 'white',
+      },
+    };
+
+    export const ThemeProvider = ({ children }) => {
+      const [theme, setTheme] = useState(themes.light);
+
+      const toggleTheme = () => {
+        setTheme(theme === themes.light ? themes.dark : themes.light);
+      };
+
+      return (
+        <ThemeContext.Provider value={{ theme, toggleTheme }}>
+          {children}
+        </ThemeContext.Provider>
+      );
+    };
+
+    export const useTheme = () => useContext(ThemeContext);
+
+    const App = () => {
+      const { theme, toggleTheme } = useTheme();
+
+      return (
+        <View style={[styles.container, { backgroundColor: theme.background }]}>
+          <Text style={{ color: theme.color }}>Hello, Theme!</Text>
+          <Button title="Toggle Theme" onPress={toggleTheme} />
+        </View>
+      );
+    };
+
+    const styles = StyleSheet.create({
+      container: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+      },
+    });
+
+    export default App;
+    ```
+
+### Animations
+
+- **React Native Animations**:
+  - **Command**: `Create React Native Animations`
+  - **Generated Code**:
+    ```jsx
+    import React, { useRef } from 'react';
+    import { View, Animated, Button } from 'react-native';
+
+    const ReactNativeAnimations = () => {
+      const fadeAnim = useRef(new Animated.Value(0)).current;
+
+      const fadeIn = () => {
+        Animated.timing(fadeAnim, {
+          toValue: 1,
+          duration: 1000,
+          useNativeDriver: true,
+        }).start();
+      };
+
+      return (
+        <View>
+          <Animated.View style={{ opacity: fadeAnim }}>
+            <View style={{ width: 100, height: 100, backgroundColor: 'blue' }} />
+          </Animated.View>
+          <Button title="Fade In" onPress={fadeIn} />
+        </View>
+      );
+    };
+
+    export default ReactNativeAnimations;
+    ```
+    ### Maps
+
+- **React Native Maps**:
+  - **Command**: `Create React Native Maps`
+  - **Generated Code**:
+    ```jsx
+    import React from 'react';
+    import { View, StyleSheet } from 'react-native';
+    import MapView, { Marker } from 'react-native-maps';
+
+    const ReactNativeMaps = () => {
+      return (
+        <View style={styles.container}>
+          <MapView style={styles.map}>
+            <Marker coordinate={{ latitude: 37.78825, longitude: -122.4324 }} />
+          </MapView>
+        </View>
+      );
+    };
+
+    const styles = StyleSheet.create({
+      container: {
+        ...StyleSheet.absoluteFillObject,
+        height: 400,
+        width: 400,
+        justifyContent: 'flex-end',
+        alignItems: 'center',
+      },
+      map: {
+        ...StyleSheet.absoluteFillObject,
+      },
+    });
+
+    export default ReactNativeMaps;
+    ```
+### Context API
+
+- **React Context API Boilerplate**:
+  - **Command**: `Create React Context API Boilerplate`
+  - **Generated Code**:
+    ```jsx
+    import React, { createContext, useContext, useReducer } from 'react';
+
+    const initialState = {
+      // initial state
+    };
+
+    const reducer = (state, action) => {
+      switch (action.type) {
+        // define case actions
+        default:
+          return state;
+      }
+    };
+
+    const StateContext = createContext();
+
+    export const StateProvider = ({ children }) => (
+      <StateContext.Provider value={useReducer(reducer, initialState)}>
+        {children}
+      </StateContext.Provider>
+    );
+
+    export const useStateValue = () => useContext(StateContext);
+    ```
+
+### Email, Phone Number, and Website Link Handlers
+
+- **Handle Email Click**:
+  - **Command**: `Create Handle Email`
+  - **Generated Code**:
+    ```js
+    import { Linking } from 'react-native';
+
+    const handleEmailClick = (email) => {
+      Linking.openURL(`mailto:${email}`);
+    };
+
+    export default handleEmailClick;
+    ```
+
+- **Handle Mobile Phone Number Click**:
+  - **Command**: `Create Handle Mobile Phone Number`
+  - **Generated Code**:
+    ```js
+    import { Linking } from 'react-native';
+
+    const handlePhoneNumberClick = (phoneNumber) => {
+      Linking.openURL(`tel:${phoneNumber}`);
+    };
+
+    export default handlePhoneNumberClick;
+    ```
+
+- **Handle Website Link Click**:
+  - **Command**: `Create Handle Website Link`
+  - **Generated Code**:
+    ```js
+    import { Linking } from 'react-native';
+
+    const handleWebsiteLinkClick = (url) => {
+      Linking.openURL(url);
+    };
+
+    export default handleWebsiteLinkClick;
+    ```
+
+### Internet Connectivity
+
+- **Check Internet Access**:
+  - **Command**: `Create Check Internet Access`
+  - **Generated Code**:
+    ```jsx
+    import React, { useEffect, useState } from 'react';
+    import { View, Text, StyleSheet } from 'react-native';
+    import NetInfo from '@react-native-community/netinfo';
+
+    const CheckInternetAccess = ({ children }) => {
+      const [isConnected, setIsConnected] = useState(true);
+
+      useEffect(() => {
+        const unsubscribe = NetInfo.addEventListener(state => {
+          setIsConnected(state.isConnected);
+        });
+
+        return () => {
+          unsubscribe();
+        };
+      }, []);
+
+      if (!isConnected) {
+        return (
+          <View style={styles.container}>
+            <Text style={styles.text}>No internet connection</Text>
+          </View>
+        );
+      }
+
+      return children;
+    };
+
+    const styles = StyleSheet.create({
+      container: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+      },
+      text: {
+        fontSize: 18,
+        color: 'red',
+      },
+    });
+
+    export default CheckInternetAccess;
+    ```
+
+### Media Pickers
+
+- **Image Picker Function**:
+  - **Command**: `Create Handle Image Picker Function`
+  - **Generated Code**:
+    ```js
+    import ImagePicker from 'react-native-image-picker';
+
+    const handleImagePicker = (options, callback) => {
+      ImagePicker.showImagePicker(options, response => {
+        if (response.didCancel) {
+          console.log('User cancelled image picker');
+        } else if (response.error) {
+          console.log('ImagePicker Error: ', response.error);
+        } else {
+          callback(response);
+        }
+      });
+    };
+
+    export default handleImagePicker;
+    ```
+
+- **Image Picker Boilerplate**:
+  - **Command**: `Create Image Picker Boilerplate`
+  - **Generated Code**:
+    ```jsx
+    import React, { useState } from 'react';
+    import { View, Button, Image } from 'react-native';
+    import handleImagePicker from './handleImagePicker';
+
+    const ImagePickerComponent = () => {
+      const [image, setImage] = useState(null);
+
+      const selectImage = () => {
+        const options = {
+          title: 'Select Image',
+          storageOptions: {
+            skipBackup: true,
+            path: 'images',
+          },
+        };
+
+        handleImagePicker(options, (response) => {
+          setImage(response.uri);
+        });
+      };
+
+      return (
+        <View>
+          <Button title="Select Image" onPress={selectImage} />
+          {image && <Image source={{ uri: image }} style={{ width: 100, height: 100 }} />}
+        </View>
+      );
+    };
+
+    export default ImagePickerComponent;
+    ```
+
+- **Video Picker Function**:
+  - **Command**: `Create Handle Video Picker Function`
+  - **Generated Code**:
+    ```js
+    import ImagePicker from 'react-native-image-picker';
+
+    const handleVideoPicker = (options, callback) => {
+      ImagePicker.showImagePicker(options, response => {
+        if (response.didCancel) {
+          console.log('User cancelled video picker');
+        } else if (response.error) {
+          console.log('ImagePicker Error: ', response.error);
+        } else {
+          callback(response);
+        }
+      });
+    };
+
+    export default handleVideoPicker;
+    ```
+
+- **Video Picker Boilerplate**:
+  - **Command**: `Create Video Picker Boilerplate`
+  - **Generated Code**:
+    ```jsx
+    import React, { useState } from 'react';
+    import { View, Button, Video } from 'react-native';
+    import handleVideoPicker from './handleVideoPicker';
+
+    const VideoPickerComponent = () => {
+      const [video, setVideo] = useState(null);
+
+      const selectVideo = () => {
+        const options = {
+          title: 'Select Video',
+          mediaType: 'video',
+          storageOptions: {
+            skipBackup: true,
+            path: 'videos',
+          },
+        };
+
+        handleVideoPicker(options, (response) => {
+          setVideo(response.uri);
+        });
+      };
+
+      return (
+        <View>
+          <Button title="Select Video" onPress={selectVideo} />
+          {video && <Video source={{ uri: video }} style={{ width: 100, height: 100 }} />}
+        </View>
+      );
+    };
+
+    export default VideoPickerComponent;
+    ```
+
+### Firebase Analytics
+
+- **Handle Firebase Analytics Function**:
+  - **Command**: `Create Handle Firebase Analytics Function`
+  - **Generated Code**:
+    ```js
+    import analytics from '@react-native-firebase/analytics';
+
+    const logEvent = async (eventName, params) => {
+      try {
+        await analytics().logEvent(eventName, params);
+        console.log('Event logged:', eventName);
+      } catch (error) {
+        console.error('Error logging event:', error);
+      }
+    };
+
+    export default logEvent;
+    ```
+
+- **Firebase Analytics Boilerplate**:
+  - **Command**: `Create Firebase Analytics Boilerplate`
+  - **Generated Code**:
+    ```jsx
+    import React from 'react';
+    import { View, Button } from 'react-native';
+    import logEvent from './logEvent';
+
+    const FirebaseAnalyticsComponent = () => {
+      const handleButtonClick = () => {
+        logEvent('button_click', { button: 'test_button' });
+      };
+
+      return (
+        <View>
+          <Button title="Click me" onPress={handleButtonClick} />
+        </View>
+      );
+    };
+
+    export default FirebaseAnalyticsComponent;
+    ```
+
+### Location
+
+- **Handle Location Function**:
+  - **Command**: `Create Handle Location Function`
+  - **Generated Code**:
+    ```js
+    import Geolocation from '@react-native-community/geolocation';
+
+    const getCurrentLocation = (callback) => {
+      Geolocation.getCurrentPosition(
+        (position) => {
+          const { latitude, longitude } = position.coords;
+          callback({ latitude, longitude });
+        },
+        (error) => {
+          console.error('Error getting location:', error);
+        },
+        { enableHighAccuracy: true, timeout: 15000, maximumAge: 10000 }
+      );
+    };
+
+    export default getCurrentLocation;
+    ```
+
+- **Location Boilerplate**:
+  - **Command**: `Create Location Boilerplate`
+  - **Generated Code**:
+    ```jsx
+    import React, { useState, useEffect } from 'react';
+    import { View, Text, Button } from 'react-native';
+    import getCurrentLocation from './handleLocation';
+
+    const LocationComponent = () => {
+      const [location, setLocation] = useState(null);
+
+      const fetchLocation = () => {
+        getCurrentLocation((coords) => {
+          setLocation(coords);
+        });
+      };
+
+      useEffect(() => {
+        fetchLocation();
+      }, []);
+
+      return (
+        <View>
+          <Button title="Get Location" onPress={fetchLocation} />
+          {location && (
+            <Text>
+              Latitude: {location.latitude}, Longitude: {location.longitude}
+            </Text>
+          )}
+        </View>
+      );
+    };
+
+    export default LocationComponent;
+    ```
 
 ## Contributing
 

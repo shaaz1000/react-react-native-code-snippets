@@ -85,7 +85,26 @@
     "onCommand:extension.createReactInfiniteLoading",
     "onCommand:extension.createI18n",
     "onCommand:extension.createReactTable",
-    "onCommand:extension.createReactTabs"
+    "onCommand:extension.createReactTabs",
+    "onCommand:extension.createReactNativeSvgXmlImage",
+    "onCommand:extension.createHandleEmail",
+    "onCommand:extension.createHandleMobilePhoneNumber",
+    "onCommand:extension.createHandleWebsiteLink",
+    "onCommand:extension.createCheckInternetAccess",
+    "onCommand:extension.createHandleImagePicker",
+    "onCommand:extension.createImagePickerBoilerplate",
+    "onCommand:extension.createHandleVideoPicker",
+    "onCommand:extension.createVideoPickerBoilerplate",
+    "onCommand:extension.createHandleCamera",
+    "onCommand:extension.createCameraBoilerplate",
+    "onCommand:extension.createHandleLocation",
+    "onCommand:extension.createLocationBoilerplate",
+    "onCommand:extension.createHandleFirebaseAnalytics",
+    "onCommand:extension.createFirebaseAnalyticsBoilerplate",
+    "onCommand:extension.createReactContextApiBoilerplate",
+    "onCommand:extension.createReactNativeMaps",
+    "onCommand:extension.createReactNativeAnimations",
+    "onCommand:extension.createReactNativeThemeSwitching"
   ],
   "contributes": {
     "commands": [
@@ -388,6 +407,82 @@
       {
         "command": "extension.createReactTabs",
         "title": "Create React Tabs"
+      },
+      {
+        "command": "extension.createReactNativeSvgXmlImage",
+        "title": "Create React Native SVG XML Image"
+      },
+      {
+        "command": "extension.createHandleEmail",
+        "title": "Create Handle Email"
+      },
+      {
+        "command": "extension.createHandleMobilePhoneNumber",
+        "title": "Create Handle Mobile Phone Number"
+      },
+      {
+        "command": "extension.createHandleWebsiteLink",
+        "title": "Create Handle Website Link"
+      },
+      {
+        "command": "extension.createCheckInternetAccess",
+        "title": "Create Check Internet Access"
+      },
+      {
+        "command": "extension.createHandleImagePicker",
+        "title": "Create Handle Image Picker Function"
+      },
+      {
+        "command": "extension.createImagePickerBoilerplate",
+        "title": "Create Image Picker Boilerplate"
+      },
+      {
+        "command": "extension.createHandleVideoPicker",
+        "title": "Create Handle Video Picker Function"
+      },
+      {
+        "command": "extension.createVideoPickerBoilerplate",
+        "title": "Create Video Picker Boilerplate"
+      },
+      {
+        "command": "extension.createHandleCamera",
+        "title": "Create Handle Camera Function"
+      },
+      {
+        "command": "extension.createCameraBoilerplate",
+        "title": "Create Camera Boilerplate"
+      },
+      {
+        "command": "extension.createHandleLocation",
+        "title": "Create Handle Location Function"
+      },
+      {
+        "command": "extension.createLocationBoilerplate",
+        "title": "Create Location Boilerplate"
+      },
+      {
+        "command": "extension.createHandleFirebaseAnalytics",
+        "title": "Create Handle Firebase Analytics Function"
+      },
+      {
+        "command": "extension.createFirebaseAnalyticsBoilerplate",
+        "title": "Create Firebase Analytics Boilerplate"
+      },
+      {
+        "command": "extension.createReactContextApiBoilerplate",
+        "title": "Create React Context API Boilerplate"
+      },
+      {
+        "command": "extension.createReactNativeMaps",
+        "title": "Create React Native Maps"
+      },
+      {
+        "command": "extension.createReactNativeAnimations",
+        "title": "Create React Native Animations"
+      },
+      {
+        "command": "extension.createReactNativeThemeSwitching",
+        "title": "Create React Native Theme Switching"
       }
     ]
   },
