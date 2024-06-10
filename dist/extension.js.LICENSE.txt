@@ -1,3 +1,5 @@
+/*! ./logManager */
+
 /*! ./templates/breakpointManager */
 
 /*! ./templates/codePathVisualizer */

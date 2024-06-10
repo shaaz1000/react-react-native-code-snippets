@@ -1,3 +1,4 @@
+const vscode = require("vscode");
 export const interactiveStackTrace = (error) => {
   const stack = error.stack.split("\n").map((line) => line.trim());
   stack.forEach((line) => {

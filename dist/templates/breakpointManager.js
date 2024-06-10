@@ -1,3 +1,4 @@
+const vscode = require("vscode");
 export const addBreakpoint = (file, line) => {
   const uri = vscode.Uri.file(file);
   const position = new vscode.Position(line - 1, 0);

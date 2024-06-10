@@ -1,3 +1,4 @@
+const vscode = require("vscode");
 export const profilePerformance = (func) => {
   const start = performance.now();
   func();
